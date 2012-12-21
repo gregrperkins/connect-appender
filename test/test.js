@@ -1,20 +1,34 @@
-assert = require('assert')
-appender = require('../lib/connect-appender');
+var appender = require('../lib/connect-appender');
+var assert = require('assert')
+var connect = require('connect');
+var request = require('supertest');
+var should = require('should');
 
 describe('appender', function() {
+    // Stupid simple proof-of-concept testing stuff
     it('should exist', function() {
-        assert.ok(appender);
+        should.exist(appender);
     });
 
     it('should not expose private stuff', function() {
-        assert.ok(!appender.stripContentLength);
+        should.not.exist(appender.stripContentLength);
     });
 
     it('should be a function', function() {
-        assert.ok(typeof appender == 'function');
+        appender.should.be.a('function');
     });
 
     it('should return a function', function() {
-        assert.ok(typeof appender('noop') == 'function');
+       appender('noop').should.be.a('function');
     });
+
+    // Stupid connect stuff
+    it('should work as connect middleware', function() {
+        var app = connect();
+        // app.use();
+        // appender('noop')
+        request(app).get('/').end(function(err, res) {
+            res.body.should.eql({});
+        });
+    })
 });

@@ -13,12 +13,18 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            files: ['lib/*', 'test/*'],
-            tasks: 'test'
+            allTests: {
+                files: ['lib/*', 'test/*'],
+                tasks: ['test']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-simple-mocha');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
     grunt.registerTask('test', 'simplemocha');
     grunt.registerTask('default', 'test');
+
+    grunt.registerTask()
 };

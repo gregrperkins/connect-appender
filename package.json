@@ -10,8 +10,13 @@
     "tdd": "grunt watch"
   },
   "devDependencies": {
+    "connect": "~2.7.1",
     "grunt": "~0.4",
+    "grunt-cli": "~0.1.6",
+    "grunt-contrib-watch": "~0.1.4",
     "grunt-simple-mocha": "~0.3",
-    "mocha": "~1.7"
+    "mocha": "~1.7",
+    "should": "~1.2.1",
+    "supertest": "~0.5.1"
   }
 }
