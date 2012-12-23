@@ -4,7 +4,7 @@ module.exports = function(grunt) {
             all: {
                 src: "test/*.js",
                 options: {
-                    // globals: ['should'],
+                    globals: ['should'],
                     reporter: 'dot',
                     timeout: '600'
                     // grep: '*_test.js'
@@ -25,6 +25,4 @@ module.exports = function(grunt) {
 
     grunt.registerTask('test', 'simplemocha');
     grunt.registerTask('default', 'test');
-
-    grunt.registerTask()
 };

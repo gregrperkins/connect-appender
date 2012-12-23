@@ -6,11 +6,11 @@
   "author": "Greg Perkins <gregperkins@alum.mit.edu>",
   "main": "lib/append.js",
   "scripts": {
-    "test": "grunt test",
-    "tdd": "grunt watch"
+    "test": "./node_modules/.bin/grunt test",
+    "tdd": "./node_modules/.bin/grunt watch"
   },
   "devDependencies": {
-    "connect": "~2.7.1",
+    "connect": "~2.7.1-1-gp",
     "grunt": "~0.4",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-watch": "~0.1.4",
