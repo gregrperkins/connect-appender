@@ -10,11 +10,11 @@
     "tdd": "./node_modules/.bin/grunt watch"
   },
   "devDependencies": {
-    "connect": "~2.7.1-1-gp",
-    "grunt": "~0.4.0rc4-1-gp",
+    "connect": "git+ssh://git@github.com:gregrperkins/connect.git#2.7.1-gp",
+    "grunt": "git+ssh://git@github.com:gregrperkins/grunt.git#0.4.0rc4-gp",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-watch": "~0.1.4",
-    "grunt-simple-mocha": "~0.3.1-1-gp",
+    "grunt-simple-mocha": "git+ssh://git@github.com:gregrperkins/grunt-simple-mocha.git#0.3.1-gp",
     "mocha": "~1.7",
     "should": "~1.2.1",
     "supertest": "~0.5.1"

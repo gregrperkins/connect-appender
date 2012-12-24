@@ -20,10 +20,4 @@ the interface has changed significantly since then.
 * tests: ``npm test``
 * dev: ``npm run-script tdd``
 
-NOTE: this relies on outstanding pull requests to: *connect*, *grunt*, and *grunt-simple-mocha* for the tests.
-Go and check out my forks of:
-* [connect](https://github.com/gregrperkins/connect/tree/gregp)
-* [grunt](https://github.com/gregrperkins/grunt/tree/gregp)
-* [grunt-simple-mocha](https://github.com/gregrperkins/grunt-simple-mocha/tree/gregp)
-
-then ``npm link ../.../{connect,grunt,grunt-simple-mocha}``.
+NOTE: this relies on outstanding pull requests to: *connect*, *grunt*, and *grunt-simple-mocha* for the tests. Uses my forks.
