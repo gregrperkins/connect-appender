@@ -4,9 +4,10 @@ module.exports = function(grunt) {
             all: {
                 src: "test/*.js",
                 options: {
-                    globals: ['should'],
-                    reporter: 'dot',
-                    timeout: '600'
+                    // globals: ['should'],
+                    reporter: 'spec',
+                    // reporter: 'nyan',
+                    // timeout: '600'
                     // grep: '*_test.js'
                 }
             }

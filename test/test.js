@@ -1,21 +1,25 @@
 var appender = require('../lib/connect-appender');
 var connect = require('connect');
 var should = require('should');
+var assert = require('assert')
 var path = require('path');
-require('connect/test/support/http'); // For app.request()
+var http = require('http');
+
+// This requires an outstanding pull request to work...
+// See: https://github.com/senchalabs/connect/pull/716
+require('connect/test/support/http');
 
 // Test some preconditions for this test file
 describe('connect', function() {
-  // This requires an outstanding pull request to work...
-  // See: https://github.com/senchalabs/connect/pull/716
+  // Ensure you're using ``npm link`` or the modified version
   it('should include shared test suites through npm', function() {
     var resolved = require.resolve('connect/test/support/http');
-
     resolved.should.be.a('string');
-    resolved.substr(-20).should.eql('test/support/http.js');
+    var endString = 'test/support/http.js'
+    resolved.substr(-endString.length).should.eql(endString);
   });
 
-  it('should produce an empty response', function() {
+  it('should produce an empty response', function(done) {
     var app = connect();
 
     app.use(function(req, res){
@@ -24,7 +28,7 @@ describe('connect', function() {
 
     app.request()
     .get('/')
-    .expect('body', function(){});
+    .expect('body', done);
   });
 
   it('should have a working json implementation', function(done) {
@@ -59,18 +63,6 @@ describe('appender', function() {
     appender('noop').should.be.a('function');
   });
 
-  it('should do nothing when given an empty string', function(done) {
-    var app = connect();
-
-    app.use(function(req, res){
-      res.end('foo');
-    });
-
-    app.request()
-    .get('/')
-    .expect('foo', done);
-  });
-
   it('should append a string to the response body', function(done) {
     var app = connect();
     app.use(appender('an_ending'));
@@ -80,9 +72,20 @@ describe('appender', function() {
       res.end('make_me_');
     });
 
-    done(); // FIXME(gregp)...
-    // app.request()
-    // .get('/')
-    // .expect('make_me_an_ending', done);
+    var req = app.request();
+    req.get('/');
+    req.expect('make_me_an_ending', done);
+  });
+
+  it('should do nothing when given an empty string', function(done) {
+    var app = connect();
+    app.use(appender(''));
+    app.use(function(req, res){
+      res.end('foo');
+    });
+
+    app.request()
+    .get('/')
+    .expect('foo', done);
   });
 });

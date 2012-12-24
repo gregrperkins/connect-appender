@@ -1,7 +1,7 @@
 {
   "name": "connect-append",
   "description": "Append middleware for connect.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Greg Perkins <gregperkins@alum.mit.edu>",
   "main": "lib/append.js",
@@ -11,10 +11,10 @@
   },
   "devDependencies": {
     "connect": "~2.7.1-1-gp",
-    "grunt": "~0.4",
+    "grunt": "~0.4.0rc4-1-gp",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-watch": "~0.1.4",
-    "grunt-simple-mocha": "~0.3",
+    "grunt-simple-mocha": "~0.3.1-1-gp",
     "mocha": "~1.7",
     "should": "~1.2.1",
     "supertest": "~0.5.1"

@@ -2,34 +2,28 @@
 
 Middleware to append some text to the body of outgoing responses.
 
-Includes pre-filter and post-filter functions so that it doesn't have to
-buffer a request we don't care about, and can selectively apply text based
-on the body of the response.
+Includes pre-filter and post-filter functions
+so that it doesn't have to buffer a request we don't care about,
+and can selectively append text
+based on the body of the response.
 
 ## WIP
 
-This doesn't work yet; it worked within the context of node-http-proxy,
-but not yet as true connect middleware, as far as my tests can see.
-
-Also, I'm hitting some problems figuring out how to get good log output from
-grunt-simple-mocha, and somehow what's being included from that modified
-connect repo is just not failing properly: when making the
-``app.request().get().expect()`` chain, a failed assertion will cause
-
-```
->> File "test/test.js" changed.
-Running "simplemocha:all" (simplemocha) task
-
-  ․․․․․․․․Fatal error: expected 'make_me_' to equal 'make_me_an_ending'
-```
+I'm not done with the test suite for this yet.
+I especially wouldn't trust the filter functions yet.
+It worked within the context of node-http-proxy but
+the interface has changed significantly since then.
 
 ### Development
-
-NOTE: this relies on an unmerged pull request to connect.js for the tests.
-Go and check out
-[my fork](https://github.com/gregrperkins/connect/tree/npm_include),
-then ``npm link ../.../connect``.
 
 * init: ``npm install``
 * tests: ``npm test``
 * dev: ``npm run-script tdd``
+
+NOTE: this relies on outstanding pull requests to: *connect*, *grunt*, and *grunt-simple-mocha* for the tests.
+Go and check out my forks of:
+* [connect](https://github.com/gregrperkins/connect/tree/gregp)
+* [grunt](https://github.com/gregrperkins/grunt/tree/gregp)
+* [grunt-simple-mocha](https://github.com/gregrperkins/grunt-simple-mocha/tree/gregp)
+
+then ``npm link ../.../{connect,grunt,grunt-simple-mocha}``.
