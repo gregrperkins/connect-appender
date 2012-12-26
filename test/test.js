@@ -1,4 +1,4 @@
-var appender = require('../lib/connect-appender');
+var appender = require('..');
 var connect = require('connect');
 var should = require('should');
 var assert = require('assert')

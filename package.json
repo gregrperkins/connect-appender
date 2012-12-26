@@ -1,7 +1,7 @@
 {
   "name": "connect-appender",
   "description": "Middleware to append some text to the body of outgoing responses.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Greg Perkins <gregperkins@alum.mit.edu>",
   "repository": {

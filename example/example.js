@@ -1,5 +1,5 @@
 var connect = require('connect');
-var appender = require('../lib/connect-appender');
+var appender = require('..');
 
 var app = connect()
   .use(appender('zorz\n'))
