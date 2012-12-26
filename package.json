@@ -1,10 +1,14 @@
 {
-  "name": "connect-append",
-  "description": "Append middleware for connect.",
-  "version": "0.0.2",
+  "name": "connect-appender",
+  "description": "Middleware to append some text to the body of outgoing responses.",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Greg Perkins <gregperkins@alum.mit.edu>",
-  "main": "lib/append.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregrperkins/connect-appender"
+  },
+  "main": "lib/connect-appender.js",
   "scripts": {
     "test": "./node_modules/.bin/grunt test",
     "tdd": "./node_modules/.bin/grunt watch"
@@ -16,7 +20,6 @@
     "grunt-contrib-watch": "~0.1.4",
     "grunt-simple-mocha": "git+ssh://git@github.com:gregrperkins/grunt-simple-mocha.git#0.3.1-gp",
     "mocha": "~1.7",
-    "should": "~1.2.1",
-    "supertest": "~0.5.1"
+    "should": "~1.2.1"
   }
 }

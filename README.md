@@ -7,13 +7,6 @@ so that it doesn't have to buffer a request we don't care about,
 and can selectively append text
 based on the body of the response.
 
-## WIP
-
-I'm not done with the test suite for this yet.
-I especially wouldn't trust the filter functions yet.
-It worked within the context of node-http-proxy but
-the interface has changed significantly since then.
-
 ### Development
 
 * init: ``npm install``
@@ -21,3 +14,7 @@ the interface has changed significantly since then.
 * dev: ``npm run-script tdd``
 
 NOTE: this relies on outstanding pull requests to: *connect*, *grunt*, and *grunt-simple-mocha* for the tests. Uses my forks.
+
+### TODOs
+
+* response.write() with different encodings
