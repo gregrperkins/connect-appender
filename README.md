@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/gregrperkins/connect-appender.png)](http://travis-ci.org/gregrperkins/connect-appender)
+
 # connect-appender
 
 Middleware to append some text to the body of outgoing responses.
