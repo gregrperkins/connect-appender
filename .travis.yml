@@ -1,4 +1,4 @@
-script: npm install -ddd
+install: npm install -ddd
 language: node_js
 node_js:
   - "0.9"
