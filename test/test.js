@@ -7,7 +7,7 @@ var http = require('http');
 
 // This requires an outstanding pull request to work...
 // See: https://github.com/senchalabs/connect/pull/716
-require('connect/test/support/http');
+require('./support/http');
 
 // Test some preconditions about Connect
 describe('connect', function() {

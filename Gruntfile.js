@@ -1,25 +1,26 @@
 module.exports = function(grunt) {
-    grunt.initConfig({
-        simplemocha: {
-            all: {
-                src: "test/*.js",
-                options: {
-                    reporter: 'spec'
-                }
-            }
-        },
-
-        watch: {
-            allTests: {
-                files: ['lib/*', 'test/*'],
-                tasks: ['test']
-            }
+  grunt.initConfig({
+    "mocha-hack": {
+      all: {
+        src: "test/*.js",
+        options: {
+          useColors: true,
+          reporter: 'spec'
         }
-    });
+      }
+    },
 
-    grunt.loadNpmTasks('grunt-simple-mocha');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    watch: {
+      allTests: {
+        files: ['lib/*', 'test/*'],
+        tasks: ['test']
+      }
+    }
+  });
 
-    grunt.registerTask('test', 'simplemocha');
-    grunt.registerTask('default', 'test');
+  grunt.loadNpmTasks('grunt-mocha-hack');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('test', 'mocha-hack');
+  grunt.registerTask('default', 'test');
 };

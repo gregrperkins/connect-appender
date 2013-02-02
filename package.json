@@ -1,7 +1,7 @@
 {
   "name": "connect-appender",
   "description": "Middleware to append some text to the body of outgoing responses.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "author": "Greg Perkins <gregperkins@alum.mit.edu>",
   "repository": {
@@ -14,11 +14,11 @@
     "tdd": "./node_modules/.bin/grunt watch"
   },
   "devDependencies": {
-    "connect": "git+ssh://git@github.com:gregrperkins/connect.git#2.7.1-gp",
-    "grunt": "git+ssh://git@github.com:gregrperkins/grunt.git#0.4.0rc4-gp",
+    "connect": "~2.7.1",
+    "grunt": "~0.4.0rc7",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-watch": "~0.1.4",
-    "grunt-simple-mocha": "git+ssh://git@github.com:gregrperkins/grunt-simple-mocha.git#0.3.1-gp",
+    "grunt-mocha-hack": "~0.0.2",
     "mocha": "~1.7",
     "should": "~1.2.1"
   }
