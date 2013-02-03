@@ -72,5 +72,3 @@ var app = connect()
 * init: ``npm install``
 * tests: ``npm test``
 * dev: ``npm run-script tdd``
-
-NOTE: The tests rely on custom forks of: *connect*, *grunt*, and *grunt-simple-mocha*.
