@@ -5,20 +5,11 @@ var assert = require('assert')
 var path = require('path');
 var http = require('http');
 
-// This requires an outstanding pull request to work...
-// See: https://github.com/senchalabs/connect/pull/716
+// Wrap connect with it's test/support/http.js functions
 require('./support/http');
 
 // Test some preconditions about Connect
 describe('connect', function() {
-  // Ensure you're using ``npm link`` or the modified version
-  it('should include shared test suites through npm', function() {
-    var resolved = require.resolve('connect/test/support/http');
-    resolved.should.be.a('string');
-    var endString = 'test/support/http.js'
-    resolved.substr(-endString.length).should.eql(endString);
-  });
-
   it('should produce an empty response', function(done) {
     var app = connect();
 
